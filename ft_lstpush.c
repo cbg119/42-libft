@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstpush.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/13 15:57:29 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/13 16:07:37 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/02/13 16:52:45 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/02/13 17:08:14 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstpush(t_list *head, t_list *new)
 {
-	t_list	*next;
-
-	while (*alst)
+	if (head)
 	{
-		next = (*alst)->next;
-		ft_lstdelone(alst, del);
-		*alst = next;
+		while (head->next)
+			head = head->next;
+		head->next = new;
 	}
-	*alst = NULL;
+	else
+		head = new;
 }

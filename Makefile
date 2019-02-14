@@ -6,7 +6,7 @@
 #    By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/02/13 16:01:57 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/02/13 17:04:35 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,11 @@ SRCS = ft_strcpy.c \
 	   ft_putnbr_fd.c \
 	   ft_lstnew.c \
 	   ft_lstdelone.c \
-	   ft_lstdel.c
+	   ft_lstdel.c \
+	   ft_lstadd.c \
+	   ft_lstiter.c \
+	   ft_lstpush.c \
+	   ft_lstmap.c
 OBJECTS = $(patsubst %.c,%.o,$(SRCS))
 HEADERS = libft.h
 

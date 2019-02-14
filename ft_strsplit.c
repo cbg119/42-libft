@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 11:54:16 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/13 12:25:52 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/02/13 16:41:11 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,7 @@ char			**ft_strsplit(char const *s, char c)
 		while (s[j] == c)
 			j++;
 		while (s[j] && s[j] != c)
-		{
-			strings[i][k] = s[j];
-			k++;
-			j++;
-		}
+			strings[i][k++] = s[j++];
 		strings[i][k] = '\0';
 		i++;
 	}
