@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 11:25:44 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/13 14:58:14 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/02/13 16:01:52 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,8 @@ typedef struct		s_list
 */
 
 t_list  *ft_lstnew(void const *content, size_t contentsize);
+void    ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void    ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 
 /*
 **********************
