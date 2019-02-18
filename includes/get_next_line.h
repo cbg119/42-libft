@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 12:14:42 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/18 13:06:00 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/02/18 13:07:14 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <sys/stat.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "../libft.h"
+# include "./libft.h"
 
 int		get_next_line(const int fd, char **line);
 
