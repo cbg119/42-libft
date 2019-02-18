@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/18 12:34:23 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/02/18 12:50:41 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 **	INCLUDES SECTION
 */
 
+# include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
@@ -108,6 +109,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+int					get_next_line(const int fd, char **line);
 
 /*
 **********************
