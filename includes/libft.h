@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/21 12:20:10 by alkozma          ###   ########.fr       */
+/*   Updated: 2019/02/27 23:35:47 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@
 **	MACROS
 */
 
+# define ABS(n)				((n >= 0) ? n : -n)
+# define IS_DIGIT(c)		((c >= '0' && c <= '9') ? 1 : 0)
 # define IS_SIGN(c)			((c == '+' || c == '-') ? 1 : 0)
 # define IS_SPACE(c)		((c == ' ' || c == '\n' || c == '\t') ? 1 : 0)
-# define ABS(n)				(n < 0 ? -n : n)
+# define MEM_CHK(c)			if (!c) return (NULL)
 
 /*
 **********************
@@ -158,7 +160,10 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 char				*ft_strccpy(char *dst, const char *src, const char c);
-void				ft_tokreplc(char *str, char tok, char c);
+char				*ft_strndup(const char *src, int n);
+char				*ft_stroverlap(char *dst, const char *src);
+void				ft_strmove(char *dst, const char *src);
+void				ft_strrev(char *str);
 
 /*
 **********************

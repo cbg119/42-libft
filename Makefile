@@ -6,7 +6,7 @@
 #    By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/02/20 21:19:45 by alkozma          ###   ########.fr        #
+#    Updated: 2019/02/27 23:36:05 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,14 +76,18 @@ SRCS = ft_strcpy.c \
 	   ft_lstmap.c \
 	   ft_strccpy.c \
 	   get_next_line.c \
-	   ft_tokreplc.c
+	   ft_strndup.c \
+	   ft_stroverlap.c \
+	   ft_strmove.c \
+	   ft_strrev.c
 OBJECTS = $(patsubst %.c,%.o,$(SRCS))
-INLCUDES = includes/
+INLCUDES = includes/libft.h \
+		   includes/get_next_line.h
 
 all:	$(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -I includes/libft.h -I includes/get_next_line.h -c $(addprefix srcs/,$(SRCS))
+	gcc -Wall -Wextra -Werror -I includes/libft.h -c $(addprefix srcs/,$(SRCS))
 	ar -rcs $(NAME) $(OBJECTS)
 
 clean:
