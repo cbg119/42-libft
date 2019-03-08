@@ -6,7 +6,7 @@
 /*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/27 23:35:47 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/03/05 15:58:21 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 **	INCLUDES SECTION
 */
 
+# include "ft_printf.h"
 # include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>

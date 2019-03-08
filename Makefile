@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/02/27 23:36:05 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/03/05 16:04:24 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,14 +80,41 @@ SRCS = ft_strcpy.c \
 	   ft_stroverlap.c \
 	   ft_strmove.c \
 	   ft_strrev.c
+
+PRINTF_SRCS = decision.c \
+			  dispatch_array.c \
+			  ft_printf.c \
+			  options.c \
+			  utils.c
+
+PRINTF_CONVERSIONS = convert_c.c \
+					 convert_f.c \
+					 convert_i.c \
+					 convert_o.c \
+					 convert_p.c \
+					 convert_percent.c \
+					 convert_s.c \
+					 convert_u.c \
+					 convert_x.c \
+					 convert_xl.c
+
+PRINTF_EXTRAS = ft_imsorry.c \
+				ft_intmove.c \
+				ft_numlen.c \
+				ft_pad.c \
+				pf_putfloat.c
+
 OBJECTS = $(patsubst %.c,%.o,$(SRCS))
-INLCUDES = includes/libft.h \
-		   includes/get_next_line.h
+OBJECTS += $(patsubst %.c,%.o,$(PRINTF_SRCS))
+OBJECTS += $(patsubst %.c,%.o,$(PRINTF_CONVERSIONS))
+OBJECTS += $(patsubst %.c,%.o,$(PRINTF_EXTRAS))
+
+INCLUDES = includes/
 
 all:	$(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -I includes/libft.h -c $(addprefix srcs/,$(SRCS))
+	gcc -Wall -Wextra -Werror -I includes/libft.h -c $(addprefix srcs/,$(SRCS)) $(addprefix ft_printf/src/,$(PRINTF_SRCS)) $(addprefix ft_printf/conversions/,$(PRINTF_CONVERSIONS)) $(addprefix ft_printf/extras/,$(PRINTF_EXTRAS))
 	ar -rcs $(NAME) $(OBJECTS)
 
 clean:
