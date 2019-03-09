@@ -6,9 +6,16 @@
 #    By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/03/05 16:04:24 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/03/08 22:25:23 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+RED = \033[0;31m
+GREEN = \033[0;32m
+L_GREEN = \033[1;32m
+BLUE = \033[0;34m
+L_BLUE = \033[0;34m
+WHITE = \033[1;37m
 
 NAME = libft.a
 SRCS = ft_strcpy.c \
@@ -114,13 +121,21 @@ INCLUDES = includes/
 all:	$(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -I includes/libft.h -c $(addprefix srcs/,$(SRCS)) $(addprefix ft_printf/src/,$(PRINTF_SRCS)) $(addprefix ft_printf/conversions/,$(PRINTF_CONVERSIONS)) $(addprefix ft_printf/extras/,$(PRINTF_EXTRAS))
-	ar -rcs $(NAME) $(OBJECTS)
+	@echo "$(L_BLUE)Making objects...$(WHITE)"
+	@gcc -Wall -Wextra -Werror -I includes/libft.h -c $(addprefix srcs/,$(SRCS)) $(addprefix ft_printf/src/,$(PRINTF_SRCS)) $(addprefix ft_printf/conversions/,$(PRINTF_CONVERSIONS)) $(addprefix ft_printf/extras/,$(PRINTF_EXTRAS))
+	@echo "$(L_GREEN)Objects made!$(WHITE)"
+	@echo "$(L_BLUE)Making library...$(WHITE)"
+	@ar -rcs $(NAME) $(OBJECTS)
+	@echo "$(L_GREEN)Library made!$(WHITE)"
 
 clean:
-	rm -rf $(OBJECTS)
+	@echo "$(L_BLUE)Deleting objects...$(WHITE)"
+	@rm -rf $(OBJECTS)
+	@echo "$(RED)Objects deleted!$(WHITE)"
 
 fclean: clean
-	rm -rf $(NAME)
+	@echo "$(L_BLUE)Cleaning up...$(WHITE)"
+	@rm -rf $(NAME)
+	@echo "$(RED)Objects and library deleted$(WHITE)"
 
 re: fclean all
