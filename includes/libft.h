@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/03/05 15:58:21 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/03/22 02:11:57 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <string.h>
 
 /*
-**********************
+**
 */
 
 /*
@@ -38,8 +38,20 @@
 # define MEM_CHK(c)			if (!c) return (NULL)
 
 /*
-**********************
+**
 */
+
+/*
+**	COLORS
+*/
+
+# define C_RED "\x1b[0;31m"
+# define C_GREEN "\x1b[0;32m"
+# define C_YELLOW "\x1b[0;33m"
+# define C_BLUE "\x1b[0;34m"
+# define C_MAGENTA "\x1b[0;35m"
+# define C_CYAN "\x1b[0;36m"
+# define C_WHITE  "\x1b[0m"
 
 /*
 **	FUNCTION PROTOTYPES
@@ -78,7 +90,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /*
-**********************
+**
 */
 
 /*
@@ -116,7 +128,7 @@ void				ft_putnbr_fd(int n, int fd);
 int					get_next_line(const int fd, char **line);
 
 /*
-**********************
+**
 */
 
 /*
@@ -133,7 +145,7 @@ typedef struct		s_list
 }					t_list;
 
 /*
-**********************
+**
 */
 
 /*
@@ -151,7 +163,7 @@ void				ft_lstpush(t_list *head, t_list *new);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 /*
-**********************
+**
 */
 
 /*
@@ -167,6 +179,6 @@ void				ft_strmove(char *dst, const char *src);
 void				ft_strrev(char *str);
 
 /*
-**********************
+**\
 */
 #endif
