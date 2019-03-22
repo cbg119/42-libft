@@ -6,7 +6,7 @@
 /*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/03/22 02:11:57 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/03/22 02:18:14 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,6 @@
 # include <string.h>
 
 /*
-**
-*/
-
-/*
 **	MACROS
 */
 
@@ -36,10 +32,6 @@
 # define IS_SIGN(c)			((c == '+' || c == '-') ? 1 : 0)
 # define IS_SPACE(c)		((c == ' ' || c == '\n' || c == '\t') ? 1 : 0)
 # define MEM_CHK(c)			if (!c) return (NULL)
-
-/*
-**
-*/
 
 /*
 **	COLORS
@@ -90,10 +82,6 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
 /*
-**
-*/
-
-/*
 *********************
 **	FUNCTIONS PT. 2
 *********************
@@ -128,10 +116,6 @@ void				ft_putnbr_fd(int n, int fd);
 int					get_next_line(const int fd, char **line);
 
 /*
-**
-*/
-
-/*
 **********************
 **	STRUCTURES
 **********************
@@ -143,10 +127,6 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-
-/*
-**
-*/
 
 /*
 **********************
@@ -163,10 +143,6 @@ void				ft_lstpush(t_list *head, t_list *new);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 /*
-**
-*/
-
-/*
 **********************
 **	PERSONAL
 **********************
@@ -177,8 +153,4 @@ char				*ft_strndup(const char *src, int n);
 char				*ft_stroverlap(char *dst, const char *src);
 void				ft_strmove(char *dst, const char *src);
 void				ft_strrev(char *str);
-
-/*
-**\
-*/
 #endif
