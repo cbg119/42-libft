@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+         #
+#    By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/03/08 22:25:23 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/03/22 01:27:57 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,15 +122,17 @@ all:	$(NAME)
 
 $(NAME):
 	@echo "$(L_BLUE)Making objects...$(WHITE)"
-	@gcc -Wall -Wextra -Werror -I includes/libft.h -c $(addprefix srcs/,$(SRCS)) $(addprefix ft_printf/src/,$(PRINTF_SRCS)) $(addprefix ft_printf/conversions/,$(PRINTF_CONVERSIONS)) $(addprefix ft_printf/extras/,$(PRINTF_EXTRAS))
+	@mkdir build
+	@gcc -Wall -Wextra -Werror -I $(INCLUDES) -c $(addprefix srcs/,$(SRCS)) $(addprefix ft_printf/src/,$(PRINTF_SRCS)) $(addprefix ft_printf/conversions/,$(PRINTF_CONVERSIONS)) $(addprefix ft_printf/extras/,$(PRINTF_EXTRAS))
+	@mv $(OBJECTS) build/
 	@echo "$(L_GREEN)Objects made!$(WHITE)"
 	@echo "$(L_BLUE)Making library...$(WHITE)"
-	@ar -rcs $(NAME) $(OBJECTS)
+	@ar -rcs $(NAME) $(addprefix build/,$(OBJECTS))
 	@echo "$(L_GREEN)Library made!$(WHITE)"
 
 clean:
 	@echo "$(L_BLUE)Deleting objects...$(WHITE)"
-	@rm -rf $(OBJECTS)
+	@rm -rf build
 	@echo "$(RED)Objects deleted!$(WHITE)"
 
 fclean: clean
