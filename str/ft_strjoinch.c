@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strjoinch.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 12:14:42 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/03/26 17:47:39 by cbagdon          ###   ########.fr       */
+/*   Created: 2019/03/31 15:27:12 by cbagdon           #+#    #+#             */
+/*   Updated: 2019/04/01 10:27:44 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "../includes/libft.h"
 
-# define BUFF_SIZE 1
+char	*ft_strjoinch(char *s1, char c)
+{
+	int		i;
+	int		len;
+	char	*result;
 
-# define CHECK(x) if (x) return (-1)
-# define BREAK(x) if (x) break
-
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include "./libft.h"
-
-int		get_next_line(const int fd, char **line);
-
-#endif
+	if (!s1 && !c)
+		return (NULL);
+	if (!s1)
+	{
+		result = ft_strnew(1);
+		result[0] = c;
+	}
+	else if (!c)
+		return (s1);
+	else
+	{
+		i = -1;
+		len = ft_strlen(s1);
+		result = ft_strnew(len + 1);
+		while (++i < len)
+			result[i] = s1[i];
+		result[i] = c;
+	}
+	return (result);
+}

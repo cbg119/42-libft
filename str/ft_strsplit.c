@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 11:54:16 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/02/13 16:41:11 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/04/01 12:37:42 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char			**ft_strsplit(char const *s, char c)
 	char	**strings;
 
 	if (!s || !(strings = (char **)malloc(sizeof(char *) *
-					ft_getwordcount(s, c) + 1)))
+					(ft_getwordcount(s, c) + 1))))
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -45,7 +45,7 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		k = 0;
 		if (!(strings[i] = (char *)malloc(sizeof(char) *
-						get_word_len(&s[j], c) + 1)))
+						(get_word_len(&s[j], c) + 1))))
 			return (NULL);
 		while (s[j] == c)
 			j++;

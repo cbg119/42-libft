@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbagdon <cbagdon@student.42.us.org>        +#+  +:+       +#+        */
+/*   By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 17:58:47 by cbagdon           #+#    #+#             */
-/*   Updated: 2019/03/22 02:18:14 by cbagdon          ###   ########.fr       */
+/*   Updated: 2019/04/01 13:35:00 by cbagdon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstpush(t_list *head, t_list *new);
+void				ft_lstpush(t_list **head, t_list *new);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 /*
@@ -153,4 +153,9 @@ char				*ft_strndup(const char *src, int n);
 char				*ft_stroverlap(char *dst, const char *src);
 void				ft_strmove(char *dst, const char *src);
 void				ft_strrev(char *str);
+int					ft_starts_with(char *to_start, char *str);
+char				*ft_strjoinch(char *s1, char c);
+char				*ft_strjoinchf(char *str, char c);
+char				*ft_strjoinf(char *s1, char *s2);
+
 #endif
