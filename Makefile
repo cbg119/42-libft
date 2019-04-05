@@ -6,7 +6,7 @@
 #    By: cbagdon <cbagdon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/11 16:50:18 by cbagdon           #+#    #+#              #
-#    Updated: 2019/04/02 16:38:49 by cbagdon          ###   ########.fr        #
+#    Updated: 2019/04/05 12:58:40 by cbagdon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ MISC_SRCS = ft_atoi.c \
 	   ft_getwordcount.c \
 	   ft_intlen.c \
 	   ft_itoa.c \
-	   get_next_line.c
+	   get_next_line.c \
+	   ft_itoa_base.c
 
 LST_SRCS = ft_lstadd.c \
 		   ft_lstdelone.c \
